@@ -7,12 +7,12 @@ const Notes = () => {
 
   const addNotes = () => {
     if (text.trim() !== "") {
-      setNotesList([
+      setNotesList((prev) => [
         {
           note: text,
           id: uuidv4(),
         },
-        ...notesList,
+        ...prev,
       ]);
       setText("");
     } else {
