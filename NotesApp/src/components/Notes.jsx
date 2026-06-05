@@ -6,16 +6,21 @@ const Notes = () => {
   const addNotes = () => {
     if (text.trim() != "") {
       setNotesList([
-        ...notesList,
         {
           note: text,
           id: uuidv4(),
         },
+        ...notesList,
       ]);
       setText("");
+    } else {
+      alert("Please Enter valid Note");
     }
   };
-  
+  const dltNote = (dltId) => {
+    setNotesList(notesList.filter((item) => item.id !== dltId));
+  };
+
   return (
     <div className="flex justify-start items-center mt-10  min-h-screen flex-col gap-24">
       {/* input......... */}
@@ -26,6 +31,12 @@ const Notes = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="textarea textarea-primary w-full h-1/2 resize-none"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              addNotes();
+            }
+          }}
         />
 
         <button
@@ -45,7 +56,12 @@ const Notes = () => {
               <h2 className="card-title">Note</h2>
               <p>{list.note}</p>
               <div className="card-actions">
-                <button className="btn btn-primary">Delete</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => dltNote(list.id)}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>
