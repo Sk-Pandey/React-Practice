@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import deleteImg from "../assets/delete.png";
 import { v4 as uuidv4 } from "uuid";
 const Students = () => {
+  // state for name input
   const [name, setName] = useState("");
+  // state for storing student list
   const [students, setStudents] = useState([]);
+
+  //  function for adding student into list
   const addStudents = () => {
     if (name.trim() !== "") {
       setStudents([
@@ -16,11 +20,13 @@ const Students = () => {
       setName("");
     }
   };
+  // function for delete student from list
   const dltStudent = (dltId) => {
     setStudents(students.filter((obj) => obj.id !== dltId));
   };
   return (
     <div>
+      {/*input Form.............. */}
       <div className="flex justify-center items-center mt-8">
         <fieldset className="fieldset">
           <legend className="fieldset-legend">What is your name?</legend>
@@ -42,6 +48,7 @@ const Students = () => {
         </fieldset>
       </div>
 
+      {/* List of students............... */}
       <ul className="list bg-base-100 rounded-box shadow-md">
         <li className="p-4 pb-2 text-lg opacity-60 tracking-wide">
           Students List
