@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 
-const App = () => {
+const App = () => { 
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-gray-100">
