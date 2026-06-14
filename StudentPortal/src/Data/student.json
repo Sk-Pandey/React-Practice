@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Sharma",
+    "age": 20,
+    "course": "Computer Science",
+    "year": "2nd Year",
+    "email": "aarav.sharma@example.com",
+    "cgpa": 8.7,
+    "image": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Priya Patel",
+    "age": 21,
+    "course": "Information Technology",
+    "year": "3rd Year",
+    "email": "priya.patel@example.com",
+    "cgpa": 9.1,
+    "image": "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Rahul Verma",
+    "age": 19,
+    "course": "Mechanical Engineering",
+    "year": "1st Year",
+    "email": "rahul.verma@example.com",
+    "cgpa": 8.2,
+    "image": "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Ananya Singh",
+    "age": 22,
+    "course": "Electronics",
+    "year": "4th Year",
+    "email": "ananya.singh@example.com",
+    "cgpa": 9.4,
+    "image": "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Vikram Kumar",
+    "age": 20,
+    "course": "Civil Engineering",
+    "year": "2nd Year",
+    "email": "vikram.kumar@example.com",
+    "cgpa": 7.9,
+    "image": "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sneha Gupta",
+    "age": 21,
+    "course": "Data Science",
+    "year": "3rd Year",
+    "email": "sneha.gupta@example.com",
+    "cgpa": 9.0,
+    "image": "https://randomuser.me/api/portraits/women/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Arjun Mehta",
+    "age": 22,
+    "course": "Artificial Intelligence",
+    "year": "4th Year",
+    "email": "arjun.mehta@example.com",
+    "cgpa": 8.8,
+    "image": "https://randomuser.me/api/portraits/men/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Kavya Reddy",
+    "age": 19,
+    "course": "Cyber Security",
+    "year": "1st Year",
+    "email": "kavya.reddy@example.com",
+    "cgpa": 8.5,
+    "image": "https://randomuser.me/api/portraits/women/8.jpg"
+  }
+]
