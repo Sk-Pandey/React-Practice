@@ -18,7 +18,7 @@ const ApiHandle = () => {
   return (
     <div className="flex justify-center flex-col items-center gap-8 h-screen font-bold text-3xl">
       <fieldset className="fieldset">
-        <legend className="fieldset-legend">What is your name?</legend>
+        <legend className="fieldset-legend">What is your username?</legend>
         <input
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
