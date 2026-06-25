@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <div>
@@ -11,10 +11,42 @@ const Nav = () => {
           width: "100vw",
         }}
       >
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/services">Services</Link>
+        <NavLink
+          style={({ isActive }) => ({
+            color: isActive ? "red" : "blue",
+            textDecoration: "none",
+          })}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => ({
+            color: isActive ? "red" : "blue",
+            textDecoration: "none",
+          })}
+          to="/about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => ({
+            color: isActive ? "red" : "blue",
+            textDecoration: "none",
+          })}
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => ({
+            color: isActive ? "red" : "blue",
+            textDecoration: "none",
+          })}
+          to="/services"
+        >
+          Services
+        </NavLink>
       </nav>
     </div>
   );
