@@ -10,6 +10,9 @@ const Users = () => {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/users",
         );
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -74,7 +77,34 @@ const Users = () => {
       </>
     );
   }
-  return <div>Users</div>;
+  return (
+    <>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {users.map((user) => (
+            <div key={user.id} className="bg-white  rounded-xl shadow-md p-5 ">
+              {/* Name */}
+              <div className="  rounded w-3/4 mx-auto mb-4 text-black font-bold text-center text-xl font-serif">
+                {user.name}
+              </div>
+
+              {/* Email */}
+              <div className="  rounded w-full mb-3 text-gray-600 font-semibold text-center">
+                📧: {user.email}
+              </div>
+
+              {/* Phone */}
+              <div className="  rounded w-5/6 mb-3 text-rose-400 font-semibold text-center mx-auto">
+                📞{user.phone}
+              </div>
+
+              {/* Buttons */}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Users;
