@@ -1,15 +1,22 @@
 import React from "react";
 
-const StudentForm = ({ FormData, SetFormData }) => {
+const StudentForm = ({ FormData, setFormData, students, setStudents }) => {
   const inputhandler = (e) => {
-    SetFormData({
+    setFormData({
       ...FormData,
-      [e.name]: e.value,
+      [e.target.name]: e.target.value,
     });
   };
   const addStudent = () => {
-    if(FormData.name && FormData.age && FormData.course){
-        
+    if (FormData.name && FormData.age > 0 && FormData.course) {
+      setStudents((prevStudents) => [...prevStudents, FormData]);
+      setFormData({
+        name: "",
+        age: "",
+        course: "",
+      });
+    } else {
+      alert("Enter valid value");
     }
   };
   return (
@@ -42,7 +49,12 @@ const StudentForm = ({ FormData, SetFormData }) => {
           value={FormData.course}
           onChange={inputhandler}
         />
-        <button className="btn  bg-success active:scale-95">Add Student</button>
+        <button
+          className="btn  bg-success active:scale-95"
+          onClick={addStudent}
+        >
+          Add Student
+        </button>
       </div>
     </div>
   );

@@ -7,14 +7,19 @@ import StudentList from "../components/StudentList";
 const Home = () => {
   const [FormData, setFormData] = useState({
     name: "",
-    age: null,
+    age: "",
     course: "",
   });
-  
+  const [students, setStudents] = useState([]);
   return (
     <div>
       <Navbar />
-      <StudentForm FormData={FormData} setFormData={setFormData} />
+      <StudentForm
+        FormData={FormData}
+        setFormData={setFormData}
+        students={students}
+        setStudents={setStudents}
+      />
       <SearchBar />
       <StudentList />
     </div>
