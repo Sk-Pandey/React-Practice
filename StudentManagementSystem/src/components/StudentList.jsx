@@ -1,6 +1,6 @@
 import React from "react";
 
-const StudentList = ({ students, search }) => {
+const StudentList = ({ students, search, deleteStudent }) => {
   return (
     <div>
       <h1 className="text-center text-2xl font-bold">Students List</h1>
@@ -25,7 +25,14 @@ const StudentList = ({ students, search }) => {
                   <button className="font-semibold btn btn-primary">
                     Edit
                   </button>
-                  <button className="font-semibold btn btn-gost">Delete</button>
+                  <button
+                    className="font-semibold btn btn-gost"
+                    onClick={() => {
+                      deleteStudent(student.id);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             );

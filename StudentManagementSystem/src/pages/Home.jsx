@@ -13,6 +13,9 @@ const Home = () => {
   });
   const [students, setStudents] = useState([]);
   const [search, setSearch] = useState("");
+  const deleteStudent = (dltid) => {
+    setStudents(students.filter((student) => student.id !== dltid));
+  };
   return (
     <div>
       <Navbar />
@@ -23,7 +26,11 @@ const Home = () => {
         setStudents={setStudents}
       />
       <SearchBar search={search} setSearch={setSearch} />
-      <StudentList students={students} search={search} />
+      <StudentList
+        students={students}
+        search={search}
+        deleteStudent={deleteStudent}
+      />
     </div>
   );
 };
