@@ -11,6 +11,7 @@ const Home = () => {
     course: "",
   });
   const [students, setStudents] = useState([]);
+  const [search, setSearch] = useState("");
   return (
     <div>
       <Navbar />
@@ -20,7 +21,7 @@ const Home = () => {
         students={students}
         setStudents={setStudents}
       />
-      <SearchBar />
+      <SearchBar search={search} setSearch={setSearch} />
       <StudentList />
     </div>
   );

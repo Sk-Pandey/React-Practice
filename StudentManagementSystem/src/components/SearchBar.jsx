@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ search, setSearch }) => {
   return (
     <div className="space-x-4 flex justify-center items-center h-24">
       <label className="input">
@@ -20,7 +20,15 @@ const SearchBar = () => {
             <path d="m21 21-4.3-4.3"></path>
           </g>
         </svg>
-        <input type="search" required placeholder="Search Student" />
+        <input
+          type="search"
+          required
+          placeholder="Search Student"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
       </label>
     </div>
   );
