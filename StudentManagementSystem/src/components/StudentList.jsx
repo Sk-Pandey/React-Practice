@@ -11,7 +11,7 @@ const StudentList = ({ students, search }) => {
           })
           .map((student) => {
             return (
-              <div className="bg-emerald-400 p-4 rounded-lg">
+              <div className="bg-emerald-400 p-4 rounded-lg" key={student.id}>
                 <h1 className="text-2xl text-black font-bold">
                   Name: {student.name}
                 </h1>

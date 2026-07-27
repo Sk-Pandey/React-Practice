@@ -1,16 +1,21 @@
 import React from "react";
-
-const StudentForm = ({ FormData, setFormData, students, setStudents }) => {
+import { v4 as uuidv4 } from "uuid";
+const StudentForm = ({ formData, setFormData, students, setStudents }) => {
   const inputhandler = (e) => {
     setFormData({
-      ...FormData,
+      ...formData,
       [e.target.name]: e.target.value,
     });
   };
   const addStudent = () => {
-    if (FormData.name && FormData.age > 0 && FormData.course) {
-      setStudents((prevStudents) => [...prevStudents, FormData]);
+    if (formData.name && formData.age > 0 && formData.course) {
+      setStudents((prevStudents) => [
+        ...prevStudents,
+        { ...formData, id: uuidv4() },
+      ]);
+      console.log(formData.id);
       setFormData({
+        id: "",
         name: "",
         age: "",
         course: "",
@@ -28,7 +33,7 @@ const StudentForm = ({ FormData, setFormData, students, setStudents }) => {
           className="input"
           placeholder="Enter Your Name"
           name="name"
-          value={FormData.name}
+          value={formData.name}
           onChange={inputhandler}
         />
         <input
@@ -37,7 +42,7 @@ const StudentForm = ({ FormData, setFormData, students, setStudents }) => {
           className="input"
           placeholder="Enter Your Age"
           name="age"
-          value={FormData.age}
+          value={formData.age}
           onChange={inputhandler}
         />
         <input
@@ -46,7 +51,7 @@ const StudentForm = ({ FormData, setFormData, students, setStudents }) => {
           className="input"
           placeholder="Enter Your Course"
           name="course"
-          value={FormData.course}
+          value={formData.course}
           onChange={inputhandler}
         />
         <button

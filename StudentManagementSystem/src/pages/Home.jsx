@@ -5,7 +5,8 @@ import SearchBar from "../components/SearchBar";
 import StudentList from "../components/StudentList";
 
 const Home = () => {
-  const [FormData, setFormData] = useState({
+  const [formData, setFormData] = useState({
+    id: "",
     name: "",
     age: "",
     course: "",
@@ -16,7 +17,7 @@ const Home = () => {
     <div>
       <Navbar />
       <StudentForm
-        FormData={FormData}
+        formData={formData}
         setFormData={setFormData}
         students={students}
         setStudents={setStudents}
