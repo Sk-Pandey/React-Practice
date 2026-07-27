@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const StudentList = () => {
   return (
-    <div>StudentList</div>
-  )
-}
+    <div>
+      <h1 className="text-center text-2xl font-bold">Students List</h1>
+      <div>
+        
+      </div>
+    </div>
+  );
+};
 
-export default StudentList
+export default StudentList;
