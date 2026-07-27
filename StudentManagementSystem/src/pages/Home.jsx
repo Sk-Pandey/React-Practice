@@ -22,7 +22,7 @@ const Home = () => {
         setStudents={setStudents}
       />
       <SearchBar search={search} setSearch={setSearch} />
-      <StudentList students={students} />
+      <StudentList students={students} search={search} />
     </div>
   );
 };
