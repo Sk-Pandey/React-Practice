@@ -13,7 +13,7 @@ const StudentForm = ({ formData, setFormData, students, setStudents }) => {
         ...prevStudents,
         { ...formData, id: uuidv4() },
       ]);
-      console.log(formData.id);
+
       setFormData({
         id: "",
         name: "",
