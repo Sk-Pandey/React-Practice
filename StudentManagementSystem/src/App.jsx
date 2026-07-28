@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-950">
       <Home />
     </div>
   );
