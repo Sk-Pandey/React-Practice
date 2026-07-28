@@ -19,7 +19,7 @@ const Home = () => {
     if (editId) {
       setStudents(
         students.map((student) =>
-          student.id === editId ? { ...formData, id: uuidv4() } : student,
+          student.id === editId ? { ...formData, id: student.id } : student,
         ),
       );
       setFormData({
@@ -64,6 +64,7 @@ const Home = () => {
         students={students}
         setStudents={setStudents}
         addStudent={addStudent}
+        editId={editId}
       />
       <SearchBar search={search} setSearch={setSearch} />
       <StudentList

@@ -3,7 +3,11 @@ import StudentCard from "./StudentCard";
 
 const StudentList = ({ students, search, deleteStudent, editFn }) => {
   const result = students.filter((student) => {
-    return student.name.toLowerCase().includes(search.toLowerCase());
+    return (
+      student.name.toLowerCase().includes(search.toLowerCase()) ||
+      student.course.toLowerCase().includes(search.toLowerCase()) ||
+      student.age.toLowerCase().includes(search.toLowerCase())
+    );
   });
   return (
     <div>

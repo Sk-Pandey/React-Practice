@@ -1,11 +1,5 @@
 import React from "react";
-const StudentForm = ({
-  formData,
-  setFormData,
-  students,
-  setStudents,
-  addStudent,
-}) => {
+const StudentForm = ({ formData, setFormData, addStudent, editId }) => {
   const inputhandler = (e) => {
     setFormData({
       ...formData,
@@ -52,7 +46,7 @@ const StudentForm = ({
           className="btn  bg-success active:scale-95"
           onClick={addStudent}
         >
-          Add Student
+          {editId ? "Update Student" : "Add Student"}
         </button>
       </div>
     </div>
