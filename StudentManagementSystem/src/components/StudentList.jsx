@@ -6,7 +6,7 @@ const StudentList = ({ students, search, deleteStudent, editFn }) => {
     return (
       student.name.toLowerCase().includes(search.toLowerCase()) ||
       student.course.toLowerCase().includes(search.toLowerCase()) ||
-      student.age.toLowerCase().includes(search.toLowerCase())
+      student.age.toString().includes(search)
     );
   });
   return (
