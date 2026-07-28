@@ -53,6 +53,11 @@ const StudentForm = ({ formData, setFormData, students, setStudents }) => {
           name="course"
           value={formData.course}
           onChange={inputhandler}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              addStudent();
+            }
+          }}
         />
         <button
           className="btn  bg-success active:scale-95"
