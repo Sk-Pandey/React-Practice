@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import StudentForm from "../components/StudentForm";
 import SearchBar from "../components/SearchBar";
@@ -12,7 +12,13 @@ const Home = () => {
     age: "",
     course: "",
   });
-  const [students, setStudents] = useState([]);
+  const [students, setStudents] = useState(
+    JSON.parse(localStorage.getItem("studentData")) || [],
+  );
+  useEffect(() => {
+    localStorage.setItem("studentData", JSON.stringify(students));
+  }, [students]);
+
   const [search, setSearch] = useState("");
   const [editId, setEditId] = useState(null);
   const addStudent = () => {
@@ -22,6 +28,7 @@ const Home = () => {
           student.id === editId ? { ...formData, id: student.id } : student,
         ),
       );
+
       setFormData({
         id: "",
         name: "",
