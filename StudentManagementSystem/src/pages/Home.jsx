@@ -12,6 +12,11 @@ const Home = () => {
     age: "",
     course: "",
   });
+  const [errors, setErrors] = useState({
+    name: "",
+    age: "",
+    course: "",
+  });
   const [students, setStudents] = useState(
     JSON.parse(localStorage.getItem("studentData")) || [],
   );
@@ -38,7 +43,26 @@ const Home = () => {
       setEditId(null);
       return;
     }
-    if (formData.name && formData.age > 0 && formData.course) {
+    const newError = {
+      name: "",
+      age: "",
+      course: "",
+    };
+    let hasError = false;
+    if (!formData.name) {
+      newError.name = "Name is Required";
+      hasError = true;
+    }
+    if (!formData.age) {
+      newError.age = "Age is Required";
+      hasError = true;
+    }
+    if (!formData.course) {
+      newError.course = "Course is Required";
+      hasError = true;
+    }
+    setErrors(newError);
+    if (!hasError) {
       setStudents((prevStudents) => [
         ...prevStudents,
         { ...formData, id: uuidv4() },
@@ -50,8 +74,11 @@ const Home = () => {
         age: "",
         course: "",
       });
-    } else {
-      alert("Enter valid value");
+      setErrors({
+        name: "",
+        age: "",
+        course: "",
+      });
     }
   };
   const deleteStudent = (dltid) => {
@@ -72,6 +99,8 @@ const Home = () => {
         setStudents={setStudents}
         addStudent={addStudent}
         editId={editId}
+        errors={errors}
+        setErrors={setErrors}
       />
       <SearchBar search={search} setSearch={setSearch} />
       <StudentList

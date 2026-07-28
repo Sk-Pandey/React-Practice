@@ -1,10 +1,18 @@
 import React from "react";
-const StudentForm = ({ formData, setFormData, addStudent, editId }) => {
+const StudentForm = ({
+  formData,
+  setFormData,
+  addStudent,
+  editId,
+  errors,
+  setErrors,
+}) => {
   const inputhandler = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   return (
@@ -19,6 +27,9 @@ const StudentForm = ({ formData, setFormData, addStudent, editId }) => {
           value={formData.name}
           onChange={inputhandler}
         />
+        {errors.name && (
+          <p className="text-red-400 text-start">{errors.name}</p>
+        )}
         <input
           type="number"
           id="age"
@@ -28,6 +39,7 @@ const StudentForm = ({ formData, setFormData, addStudent, editId }) => {
           value={formData.age}
           onChange={inputhandler}
         />
+        {errors.age && <p className="text-red-400 text-start">{errors.age}</p>}
         <input
           type="text"
           id="course"
@@ -42,6 +54,9 @@ const StudentForm = ({ formData, setFormData, addStudent, editId }) => {
             }
           }}
         />
+        {errors.course && (
+          <p className="text-red-400 text-start">{errors.course}</p>
+        )}
         <button
           className="btn  bg-success active:scale-95"
           onClick={addStudent}
