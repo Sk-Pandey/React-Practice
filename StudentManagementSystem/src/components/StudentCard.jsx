@@ -1,6 +1,6 @@
 import React from "react";
 
-const StudentCard = ({ student, deleteStudent }) => {
+const StudentCard = ({ student, deleteStudent, editFn }) => {
   return (
     <>
       <div className="bg-emerald-400 p-4 rounded-lg">
@@ -10,7 +10,12 @@ const StudentCard = ({ student, deleteStudent }) => {
         </h2>
         <p className="text-lg text-black font-bold">Age: {student.age}</p>
         <div className="space-x-4 mt-4">
-          <button className="font-semibold btn btn-primary">Edit</button>
+          <button
+            className="font-semibold btn btn-primary"
+            onClick={() => editFn(student.id)}
+          >
+            Edit
+          </button>
           <button
             className="font-semibold btn btn-gost"
             onClick={() => {

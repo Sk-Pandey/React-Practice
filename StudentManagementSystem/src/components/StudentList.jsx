@@ -1,7 +1,7 @@
 import React from "react";
 import StudentCard from "./StudentCard";
 
-const StudentList = ({ students, search, deleteStudent }) => {
+const StudentList = ({ students, search, deleteStudent, editFn }) => {
   return (
     <div>
       <h1 className="text-center text-2xl font-bold">Students List</h1>
@@ -17,6 +17,7 @@ const StudentList = ({ students, search, deleteStudent }) => {
                   student={student}
                   key={student.id}
                   deleteStudent={deleteStudent}
+                  editFn={editFn}
                 />
               );
             })

@@ -1,29 +1,18 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
-const StudentForm = ({ formData, setFormData, students, setStudents }) => {
+const StudentForm = ({
+  formData,
+  setFormData,
+  students,
+  setStudents,
+  addStudent,
+}) => {
   const inputhandler = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-  const addStudent = () => {
-    if (formData.name && formData.age > 0 && formData.course) {
-      setStudents((prevStudents) => [
-        ...prevStudents,
-        { ...formData, id: uuidv4() },
-      ]);
 
-      setFormData({
-        id: "",
-        name: "",
-        age: "",
-        course: "",
-      });
-    } else {
-      alert("Enter valid value");
-    }
-  };
   return (
     <div>
       <div className="flex  justify-center items-center flex-col mt-4 space-y-4">
