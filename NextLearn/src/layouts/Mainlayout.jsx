@@ -5,11 +5,11 @@ import Footer from "../components/Footer";
 
 const Mainlayout = () => {
   return (
-    <>
+    <div className="flex justify-between h-screen items-center flex-col ">
       <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
