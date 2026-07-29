@@ -13,16 +13,16 @@ const Navbar = () => {
       <NavLink className={navLinkClass} to="/">
         Home
       </NavLink>
-      <NavLink className={navLinkClass} to="/about">
+      <NavLink className={navLinkClass} to="about">
         About
       </NavLink>
-      <NavLink className={navLinkClass} to="/contact">
+      <NavLink className={navLinkClass} to="contact">
         Contact
       </NavLink>
-      <NavLink className={navLinkClass} to="/courses">
+      <NavLink className={navLinkClass} to="courses">
         Courses
       </NavLink>
-      <NavLink className={navLinkClass} to="/login">
+      <NavLink className={navLinkClass} to="login">
         Login
       </NavLink>
     </div>
