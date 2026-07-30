@@ -33,7 +33,7 @@ const CourseDetail = () => {
           <span>₹{viewedCourse.price}</span>
         </div>
 
-        <div className="flex justify-between text-lg">
+        <div className="flex justify-between text-lg gap-2">
           <span className="font-semibold">⏳ Duration</span>
           <span>{viewedCourse.duration}</span>
         </div>
