@@ -4,12 +4,16 @@ import { coursesList } from "./Courses";
 const CourseDetail = () => {
   const { courseId } = useParams();
   const viewedCourse = coursesList.find(
-    (course) => course.courseId == courseId,
+    (course) => course.courseId === courseId,
   );
   const navigate = useNavigate();
   const goBack = () => {
     navigate(`/courses`);
   };
+  // if course not found
+  if (!viewedCourse) {
+    return <h1>Course Not Found</h1>;
+  }
   return (
     <div
       key={viewedCourse.courseId}
