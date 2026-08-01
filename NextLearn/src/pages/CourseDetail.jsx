@@ -10,6 +10,9 @@ const CourseDetail = () => {
   const goBack = () => {
     navigate(`/courses`);
   };
+  const enrollHandle = () => {
+    navigate(`/login`, { state: { tryingToEnroll: true } });
+  };
   // if course not found
   if (!viewedCourse) {
     return <h1>Course Not Found</h1>;
@@ -42,7 +45,12 @@ const CourseDetail = () => {
           <span>{viewedCourse.duration}</span>
         </div>
 
-        <button className="btn btn-primary w-full mt-4">Enroll Now</button>
+        <button
+          className="btn btn-primary w-full mt-4"
+          onClick={() => enrollHandle()}
+        >
+          Enroll Now
+        </button>
       </div>
     </div>
   );
