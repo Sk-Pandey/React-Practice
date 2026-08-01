@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
+  const location = useLocation();
+  const { tryingToEnroll } = location.state || {};
+  useEffect(() => {
+    if (tryingToEnroll) {
+      setTimeout(() => {
+        alert("Please login to enroll in this course.");
+      }, 100);
+    }
+  }, [tryingToEnroll]);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-transparent px-4">
       <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-8 shadow-2xl">
