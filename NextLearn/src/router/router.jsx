@@ -6,6 +6,10 @@ import Contact from "../pages/Contact";
 import Courses from "../pages/Courses";
 import Login from "../pages/Login";
 import CourseDetail from "../pages/CourseDetail";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Profile from "../pages/Profile";
+import Setting from "../pages/Setting";
+import MyCourses from "../pages/MyCourses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +38,28 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <Profile />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "setting",
+        element: <Setting />,
+      },
+      {
+        path: "mycourses",
+        element: <MyCourses />,
       },
     ],
   },
