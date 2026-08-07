@@ -4,6 +4,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const login = (userData) => {
     setUser(userData);
+    console.log(user);
   };
   const logout = () => {
     setUser(null);
