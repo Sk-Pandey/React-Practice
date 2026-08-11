@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const CourseCard = ({ course }) => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2>{course.title}</h2>
@@ -9,7 +13,9 @@ const CourseCard = ({ course }) => {
 
       <p>{course.duration}</p>
 
-      <button>View Details</button>
+      <button onClick={() => navigate(`/courses/${course.id}`)}>
+        View Details
+      </button>
     </div>
   );
 };
