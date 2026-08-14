@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -52,7 +54,7 @@ const Login = () => {
       return;
     }
 
-    console.log("Login successful", formData);
+    login(formData);
   };
 
   return (
